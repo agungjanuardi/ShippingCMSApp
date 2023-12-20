@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
-import { LegendItem, ChartType } from '../lbd/lbd-chart/lbd-chart.component';
 import * as Chartist from 'chartist';
+import { ChartType, LegendItem } from 'app/lbd/lbd-chart/lbd-chart.component';
 
 @Component({
   selector: 'app-home',

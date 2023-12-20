@@ -9,10 +9,6 @@ import { NguiMapModule} from '@ngui/map';
 import { AdminLayoutRoutes } from './admin-layout.routing';
 
 import { HomeComponent } from '../../home/home.component';
-import { TypographyComponent } from '../../typography/typography.component';
-import { IconsComponent } from '../../icons/icons.component';
-import { MapsComponent } from '../../maps/maps.component';
-import { NotificationsComponent } from '../../notifications/notifications.component';
 
 
 @NgModule({
@@ -24,11 +20,7 @@ import { NotificationsComponent } from '../../notifications/notifications.compon
     NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=YOUR_KEY_HERE'})
   ],
   declarations: [
-    HomeComponent,
-    TypographyComponent,
-    IconsComponent,
-    MapsComponent,
-    NotificationsComponent
+    HomeComponent
   ]
 })
 

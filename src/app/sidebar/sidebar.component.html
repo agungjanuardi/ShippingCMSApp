@@ -67,7 +67,21 @@
         <li class="separator hidden-lg hidden-md" *ngIf="isMobileMenu()"></li>
         <li routerLinkActive="active" *ngFor="let menuItem of menuItems" class="{{menuItem.class}}">
             <a  [routerLink]="[menuItem.path]">
-                <i class="{{menuItem.icon}}"></i>
+                <img src="{{menuItem.icon}}" style="margin-right: 10px;"/>
+                <span>{{menuItem.title}}</span>
+            </a>
+        </li>
+        <li *ngIf="!isMobileMenu()">
+            <div class="settings-set" style="margin-top: 20px; border-bottom: 3px solid #F7F7F8;">
+                <p style="font-weight: 500; font-size: 18px; text-transform: uppercase;">Settings</p>
+            </div>
+        </li>
+        <li class="separator hidden-lg hidden-md" *ngIf="isMobileMenu()">
+            <p style="font-weight: 500; font-size: 18px; text-transform: uppercase;">Settings</p>
+        </li>
+        <li routerLinkActive="active" *ngFor="let menuItem of menuSettingItems" class="{{menuItem.class}}">
+            <a  [routerLink]="[menuItem.path]">
+                <img src="{{menuItem.icon}}" style="margin-right: 10px;"/>
                 <span>{{menuItem.title}}</span>
             </a>
         </li>

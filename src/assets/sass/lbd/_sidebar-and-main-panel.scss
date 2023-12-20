@@ -39,13 +39,13 @@
 
     .logo{
         padding: 20px 15px;;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        border-bottom: 3px solid #F7F7F8;
 
         p{
             float: left;
             font-size: 20px;
             margin: 10px 10px;
-            color: #000000;
+            color: #00000091;
             line-height: 20px;
             font-family: "Poppins";
             font-weight: $font-weight-normal;
@@ -55,22 +55,24 @@
             padding: $padding-small-vertical $padding-zero;
             display: block;
             font-size: $font-size-large;
-            color: #000000;
+            color: #00000091;
             text-align: left;
             font-weight: $font-weight-normal;
             line-height: 30px;
         }
     }
     .logo-img{
-        width: 180px;
+        width: 120px;
         display: inline-block;
         max-height: 70px;
         margin-right: 10px;
 
         img{
-            width: 180px;
+            width: 120px;
             top: 11px;
             position: absolute;
+            margin-left: 50px;
+            margin-top: 10px;
         }
     }
 
@@ -95,7 +97,7 @@
 
         li{
             > a{
-                color: #000000;
+                color: #00000091;
                 margin: 5px 15px;
                 opacity: .86;
                 border-radius: 4px;
@@ -134,8 +136,8 @@
             line-height: 30px;
             font-size: 12px;
             font-weight: $font-weight-normal;
-            margin-left: 45px;
-            color: #000000;
+            margin-left: 30px;
+            color: #00000091;
         }
 
         i{
@@ -145,7 +147,7 @@
             line-height: 20px;
             width: 30px;
             text-align: center;
-            color: #000000;
+            color: #00000091;
         }
 
         .caret{
@@ -157,13 +159,13 @@
 
     .logo{
         padding: 20px 15px;;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        border-bottom: 3px solid #F7F7F8;
 
         p{
             float: left;
             font-size: 20px;
             margin: 10px 10px;
-            color: #000000;
+            color: #00000091;
             line-height: 20px;
             font-family: "Poppins";
             font-weight: $font-weight-normal;
@@ -173,7 +175,7 @@
             padding: 5px 0px 5px 15px;
             display: block;
             font-size: $font-size-large;
-            color: #000000;
+            color: #00000091;
             text-align: left;
             font-weight: $font-weight-normal;
             line-height: 30px;

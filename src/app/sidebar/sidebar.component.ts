@@ -8,13 +8,21 @@ declare interface RouteInfo {
     class: string;
 }
 export const ROUTES: RouteInfo[] = [
-    { path: '/dashboard', title: 'Dashboard',  icon: 'pe-7s-graph', class: '' },
-    { path: '/user', title: 'User Profile',  icon:'pe-7s-user', class: '' },
-    { path: '/table', title: 'Table List',  icon:'pe-7s-note2', class: '' },
-    { path: '/typography', title: 'Typography',  icon:'pe-7s-news-paper', class: '' },
-    { path: '/icons', title: 'Icons',  icon:'pe-7s-science', class: '' },
-    { path: '/maps', title: 'Maps',  icon:'pe-7s-map-marker', class: '' },
-    { path: '/notifications', title: 'Notifications',  icon:'pe-7s-bell', class: '' },
+    { path: '/dashboard', title: 'Dashboard',  icon: '../assets/img/dashboard-icon.png', class: '' },
+    { path: '/shipping', title: 'Shipping Mailbox',  icon: '../assets/img/shipping-icon.png', class: '' },
+    { path: '/lebels', title: 'Shipping Lebels',  icon: '../assets/img/lebels-icon.png', class: '' },
+    { path: '/quotes', title: 'Saved Quotes',  icon: '../assets/img/quotes-icon.png', class: '' },
+    { path: '/purchase', title: 'Assisted Purchase',  icon: '../assets/img/purchase-icon.png', class: '' }
+];
+
+export const ROUTESSETTINGS: RouteInfo[] = [
+  { path: '/address', title: 'Address Book',  icon: '../assets/img/address-icon.png', class: '' },
+  { path: '/saved', title: 'Saved Box Sizes',  icon: '../assets/img/saved-box-icon.png', class: '' },
+  { path: '/membership', title: 'Membership Plan',  icon: '../assets/img/membership-icon.png', class: '' },
+  { path: '/account', title: 'Account Details',  icon: '../assets/img/account-icon.png', class: '' },
+  { path: '/billing', title: 'Billing History',  icon: '../assets/img/billing-icon.png', class: '' },
+  { path: '/refer', title: 'Address Book',  icon: '../assets/img/refer-icon.png', class: '' },
+  { path: '/support', title: 'Support',  icon: '../assets/img/support-icon.png', class: '' },
 ];
 
 @Component({
@@ -23,11 +31,13 @@ export const ROUTES: RouteInfo[] = [
 })
 export class SidebarComponent implements OnInit {
   menuItems: any[];
+  menuSettingItems: any[];
 
   constructor() { }
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
+    this.menuSettingItems = ROUTESSETTINGS.filter(menuItem => menuItem);
   }
   isMobileMenu() {
       if ($(window).width() > 991) {
