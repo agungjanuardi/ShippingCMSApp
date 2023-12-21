@@ -1,12 +1,18 @@
-
 <div class="wrapper">
-    <div class="sidebar" data-color="white" data-image="">
-        <app-sidebar></app-sidebar>
-    </div>
-
-  <div class="main-panel">
-      <navbar-cmp></navbar-cmp>
-      <router-outlet></router-outlet>
+  <div class="sidebar" data-color="white" data-image="">
+    <app-sidebar></app-sidebar>
   </div>
-
+  <div class="main-panel">
+    <navbar-cmp></navbar-cmp>
+    <div class="container-fluid">
+      <div class="row g-0">
+        <div class="col-md-8">
+          <router-outlet></router-outlet>
+        </div>
+        <div class="right-sidebar col-md-4" style="background-color: white; margin-top: 15px; padding: 30px; border-radius: 6px; border: 1px solid rgba(0, 0, 0, 0.1); height: 100%; position: sticky; top: 0px;">
+          <app-right-sidebar></app-right-sidebar>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
