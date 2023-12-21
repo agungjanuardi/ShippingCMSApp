@@ -9,6 +9,7 @@ import { NguiMapModule} from '@ngui/map';
 import { AdminLayoutRoutes } from './admin-layout.routing';
 
 import { HomeComponent } from '../../home/home.component';
+import { RightSidebarComponent } from 'app/right-sidebar/right-sidebar.component';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { HomeComponent } from '../../home/home.component';
     NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=YOUR_KEY_HERE'})
   ],
   declarations: [
-    HomeComponent
+    HomeComponent,
+    RightSidebarComponent
   ]
 })
 
