@@ -1,0 +1,14 @@
+.nav-tabs > li > a:hover {
+  border-color: #CC0019;
+}
+
+.nav-tabs > li.active {
+  color: #fff;
+  cursor: default;
+  background-color: #fff;
+  border-bottom: 10px solid #CC0019;
+  /* border-image-source: url(/src/assets/img/border-icon.png); */
+  height: 55px;
+  border-width: 0px 0px 7px 0px;
+  border-radius: 4px;
+}

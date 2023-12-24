@@ -12,6 +12,7 @@ import { AppComponent } from './app.component';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 import { RightSidebarModule } from './right-sidebar/right-sidebar.module';
+import { MatTabsModule } from '@angular/material/tabs';
 
 @NgModule({
   imports: [
