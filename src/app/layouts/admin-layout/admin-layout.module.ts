@@ -10,6 +10,7 @@ import { AdminLayoutRoutes } from './admin-layout.routing';
 
 import { HomeComponent } from '../../home/home.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import { ShippingListsComponent } from 'app/shipping-lists/shipping-lists.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { MatTabsModule } from '@angular/material/tabs';
     NguiMapModule.forRoot({apiUrl: 'https://maps.google.com/maps/api/js?key=YOUR_KEY_HERE'})
   ],
   declarations: [
-    HomeComponent
+    HomeComponent,
+    ShippingListsComponent
   ]
 })
 
