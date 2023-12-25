@@ -10,12 +10,15 @@ import { AdminLayoutRoutes } from './admin-layout.routing';
 
 import { HomeComponent } from '../../home/home.component';
 import { MatTabsModule } from '@angular/material/tabs';
-import { ShippingListsComponent } from 'app/shipping-lists/shipping-lists.component';
+import { ShippingListsComponent } from 'app/home/shipping-lists/shipping-lists.component';
+import { PackageDetailListsComponent } from 'app/home/package-detail-lists/package-detail-lists.component';
 
 
 @NgModule({
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forChild(AdminLayoutRoutes),
     MatTabsModule,
     FormsModule,
@@ -24,7 +27,8 @@ import { ShippingListsComponent } from 'app/shipping-lists/shipping-lists.compon
   ],
   declarations: [
     HomeComponent,
-    ShippingListsComponent
+    ShippingListsComponent,
+    PackageDetailListsComponent
   ]
 })
 
