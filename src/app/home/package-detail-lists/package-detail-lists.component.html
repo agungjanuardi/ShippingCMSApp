@@ -1,0 +1,74 @@
+<div class="container-fluid-dynamic" style="padding: 15px;">
+  <div class="row" *ngFor="let dummyObject of dummyObjectArray; let listIndex = index" style="border-top: 1px solid #DEDEDE; padding-top: 15px; padding-bottom: 15px;">
+    <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-2">
+        <label class="control-label" for="qty">QTY</label>
+        <input
+          type="number"
+          class="form-control"
+          id="qty"
+          placeholder="Qty"
+        />
+      </div>
+      <div class="col-md-2">
+        <label class="control-label" for="price">Price</label>
+        <input
+          type="number"
+          class="form-control"
+          id="price"
+          placeholder="Price"
+        />
+      </div>
+      <div class="col-md-8">
+        <label class="control-label" for="description">User Description</label>
+        <input
+          type="text"
+          class="form-control"
+          id="description"
+          placeholder="User Description"
+        />
+      </div>
+    </div>
+    <div class="row" style="padding-top: 15px;">
+        <div class="col-md-7">
+          <label class="control-label" for="hsdescription">HS Description</label>
+          <input
+            type="tex"
+            class="form-control"
+            id="hsdescription"
+            placeholder="HS Description"
+          />
+        </div>
+        <div class="col-md-2">
+          <label class="control-label" for="hscode">HS Code</label>
+          <input
+            type="text"
+            class="form-control"
+            id="hscode"
+            placeholder="HS Code"
+          />
+        </div>
+        <div class="col-md-2">
+          <label class="control-label" for="hscode">Made In</label>
+          <select class="form-select" aria-label="Made In" style="height: 40px; width: 80px; border-radius: 4px; border: 1px solid #E3E3E3;">
+            <option value selected="CAN">CAN</option>
+            <option value="AUS">AUS</option>
+            <option value="AMR">AMR</option>
+          </select>
+        </div>
+        <div class="col-md-1" style="padding-top: 25px; padding-left: 0px;">
+            <span><button style="background-color: #D4E2F5; border: 0px; border-radius: 4px;" (click)="deleteRow(listIndex)"><img src="/assets/img/trash-icon.png" alt="" style="width: 25px; height: 30px;"></button></span>
+        </div>
+      </div>
+  </div>
+  </div>
+  <div class="row" style="padding-top: 15px; padding-bottom: 15px; border-bottom: 1px solid #DEDEDE; border-top: 1px solid #DEDEDE;">
+    <div class="col-md-6" style="text-align: left;">
+        <p><span style="font-size: 14px; font-weight: 500; color: #00509D;">Totals : </span><span style="font-size: 14px; font-weight: 500; color: #2D2D2D;">$ 400.00</span></p>
+    </div>
+    <div class="col-md-6" style="text-align: right;">
+    <button style="font-size: 12px; font-weight: 400; color: #00509D; background-color: var(--light-blue-header-colmn, #F3F8FF); width: 150px; height: 35px; border: 0px;">+ Add Other Content</button>
+    </div>
+  </div>
+</div>
