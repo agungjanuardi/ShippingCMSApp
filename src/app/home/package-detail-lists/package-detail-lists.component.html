@@ -34,7 +34,7 @@
         <div class="col-md-7">
           <label class="control-label" for="hsdescription">HS Description</label>
           <input
-            type="tex"
+            type="text"
             class="form-control"
             id="hsdescription"
             placeholder="HS Description"
@@ -63,12 +63,66 @@
       </div>
   </div>
   </div>
-  <div class="row" style="padding-top: 15px; padding-bottom: 15px; border-bottom: 1px solid #DEDEDE; border-top: 1px solid #DEDEDE;">
+  <div class="row" style="padding-top: 15px; padding-bottom: 15px; border-top: 1px solid #DEDEDE;">
     <div class="col-md-6" style="text-align: left;">
         <p><span style="font-size: 14px; font-weight: 500; color: #00509D;">Totals : </span><span style="font-size: 14px; font-weight: 500; color: #2D2D2D;">$ 400.00</span></p>
     </div>
     <div class="col-md-6" style="text-align: right;">
     <button style="font-size: 12px; font-weight: 400; color: #00509D; background-color: var(--light-blue-header-colmn, #F3F8FF); width: 150px; height: 35px; border: 0px;">+ Add Other Content</button>
+    </div>
+  </div>
+  <div class="row" style="padding-top: 15px; padding-bottom: 15px; border-top: 1px solid #DEDEDE;">
+    <div class="col-md-4" style="text-align: left;">
+        <label class="control-label" for="brokers">Select Brokers</label>
+        <input
+          type="text"
+          class="form-control"
+          id="brokers"
+          placeholder="Use Own Broker"
+        />
+      </div>
+      <div class="col-md-4" style="text-align: left;">
+        <div class="custom-file" style="height: 40px;">
+            <label class="custom-file-label" for="customFile">Invoice</label>
+            <input type="file" class="custom-file-input" id="customFile">
+          </div>
+      </div>
+      <div class="col-md-4" style="text-align: left;">
+        <label class="control-label" for="warehouse">Select Warehouse</label>
+        <select class="form-select" aria-label="Select Warehouse" style="height: 40px; width: 223px; border-radius: 4px; border: 1px solid #E3E3E3;">
+          <option value selected="CAN">CAN</option>
+          <option value="AUS">AUS</option>
+          <option value="AMR">AMR</option>
+        </select>
+      </div>
+  </div>
+  <div class="row" style="padding-top: 15px; padding-bottom: 15px; border-top: 1px solid #DEDEDE;">
+    <div class="col-md-2"></div>
+    <div class="col-md-4">
+        <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="validationTooltipUsernamePrepend">PAPS</span>
+            </div>
+            <input style="width: 100px;" type="text" class="form-control" id="validationTooltipUsername" placeholder="123223345" aria-describedby="validationTooltipUsernamePrepend">
+          </div>
+    </div>
+    <div class="col-md-4">
+        <div class="input-group">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="validationentrynumber">Entry Number</span>
+            </div>
+            <input style="width: 100px;" type="text" class="form-control" id="validationentrynumber" placeholder="123123" aria-describedby="validationentrynumber">
+          </div>
+    </div>
+    <div class="col-md-2"></div>
+  </div>
+  <div class="row" style="padding-top: 15px; padding-bottom: 15px; border-top: 1px solid #DEDEDE; border-bottom: 1px solid #DEDEDE;">
+    <div class="col-md-8" style="text-align: right;"></div>
+    <div class="col-md-2">
+        <button type="button" style="font-size: 12px; font-weight: 500; color: #CC0019; border: 0px; background-color: white; height: 40px; border-radius: 6px; border: 1px solid var(--Color, #CC0019); width: 100%;">Cancel</button>
+    </div>
+    <div class="col-md-2">
+        <button type="button" style="font-size: 12px; font-weight: 500; color: white; border: 0px; background-color: #CC0019; height: 40px; border-radius: 6px; border-color: transparent; width: 100%;">Save</button>
     </div>
   </div>
 </div>
