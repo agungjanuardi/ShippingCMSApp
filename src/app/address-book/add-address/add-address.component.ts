@@ -10,7 +10,7 @@ export class AddAddressComponent implements OnInit {
 
   submitted: boolean = false;
   AddressForm:FormGroup;
-  Country: any = ['America', 'Canada']
+  Countries: any = ['America', 'Canada']
   @Output() newAddressEvent = new EventEmitter<any>();
   @Output() addAddressEvent = new EventEmitter<boolean>();
 
@@ -38,6 +38,13 @@ export class AddAddressComponent implements OnInit {
 
   get f(): { [key: string]: AbstractControl } {
     return this.AddressForm.controls;
+  }
+
+  changeCountry(e) {
+    console.log(e.value)
+    this.AddressForm.controls["Country"].setValue(e.target.value, {
+      onlySelf: true
+    })
   }
 
   cancelAddAddressForm()
