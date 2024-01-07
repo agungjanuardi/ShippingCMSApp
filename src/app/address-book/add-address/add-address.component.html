@@ -1,0 +1,162 @@
+<div class="container-fluid">
+  <div class="row g-0">
+    <div class="col-md-12">
+      <div class="container-fluid-list">
+        <div class="row">
+          <div class="col-md-12" style="padding-top: 15%;">
+            <form [formGroup]="AddressForm" (ngSubmit)="updateValueAddressForm()" style="font-size: 13px; font-weight: 400;">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="AddressName" class="required">Full Name</label>
+                        <input
+                          id="AddressName"
+                          formControlName="AddressName"
+                          type="text"
+                          class="form-control"
+                          name="AddressName"
+                          [ngClass]="{ 'is-invalid': submitted && f['AddressName'].errors }"
+                        />
+                        <div *ngIf="submitted && f['AddressName'].errors" class="invalid-feedback">
+                            <div *ngIf="f['AddressName'].errors['required']">Full name is required</div>
+                          </div>
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="StreetName" class="required">Street Address</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          formControlName="StreetName"
+                          id="StreetName"
+                          [ngClass]="{ 'is-invalid': submitted && f['StreetName'].errors }"
+                        />
+                        <div *ngIf="submitted && f['AddressName'].errors" class="invalid-feedback">
+                          <div *ngIf="f['AddressName'].errors['required']">Full Name is required</div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="City" class="required">City</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          formControlName="City"
+                          id="City"
+                          name="City"
+                          [ngClass]="{ 'is-invalid': submitted && f['City'].errors }"
+                        />
+                        <div *ngIf="submitted && f['City'].errors" class="invalid-feedback">
+                          <div *ngIf="f['City'].errors['required']">City is required</div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="State" class="required">State/Province</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          formControlName="State"
+                          id="State"
+                          name="State"
+                          [ngClass]="{ 'is-invalid': submitted && f['State'].errors }"
+                        />
+                        <div *ngIf="submitted && f['State'].errors" class="invalid-feedback">
+                          <div *ngIf="f['State'].errors['required']">State is required</div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="row">
+               <div class="col-md-6">
+                  </div>
+                  <div class="form-group">
+                  <label for="Country" class="required">Country</label>
+                  <select id="Country" name="Country" class="custom-select" (change)="changeCity($event)" formControlName="Country"
+                  [ngClass]="{ 'is-invalid': submitted && f['Country'].errors }">
+                    <option value="">Choose your Country</option>
+                    <option *ngFor="let country of Countries" [ngValue]="Country">{{country}}</option>
+                  </select>
+                  <div *ngIf="submitted && f['Country'].errors" class="invalid-feedback">
+                    <div *ngIf="f['Country'].errors['required']">Country is required</div>
+                  </div>
+                  </div>
+               </div> 
+               <div class="col-md-6">
+                <div class="form-group">
+                    <label for="PostalCode" class="required">Zip/Postal Code</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      formControlName="PostalCode"
+                      id="PostalCode"
+                      name="PostalCode"
+                      [ngClass]="{ 'is-invalid': submitted && f['PostalCode'].errors }"
+                    />
+                    <div *ngIf="submitted && f['PostalCode'].errors" class="invalid-feedback">
+                      <div *ngIf="f['PostalCode'].errors['required']">Postal code is required</div>
+                    </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="EmailAddress" class="required">Email</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          formControlName="EmailAddress"
+                          id="EmailAddress"
+                          name="EmailAddress"
+                          [ngClass]="{ 'is-invalid': submitted && f['EmailAddress'].errors }"
+                        />
+                        <div *ngIf="submitted && f['EmailAddress'].errors" class="invalid-feedback">
+                          <div *ngIf="f['EmailAddress'].errors['required']">Email address is required</div>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="PhoneNumber" class="required">Phone</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          formControlName="PhoneNumber"
+                          id="PhoneNumber"
+                          name="PhoneNumber"
+                          [ngClass]="{ 'is-invalid': submitted && f['PhoneNumber'].errors }"
+                        />
+                        <div *ngIf="submitted && f['PhoneNumber'].errors" class="invalid-feedback">
+                          <div *ngIf="f['PhoneNumber'].errors['required']">Phone number is required</div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="row" style="padding-top: 20px;">
+                <div class="col-md-2"></div>
+                <div class="col-md-5" style="text-align: right;">
+                    <div class="form-group">
+                        <button (click)="cancelAddAddressForm()" style="width: 120px; color: white; background-color: #CC0019; border-radius: 6px; padding: 10px; font-size: 15px; font-weight: 500; border-color: #CC0019;"><i class="fa fa-close"></i> Cancel</button>
+                      </div>
+                </div>
+                <div class="col-md-5" style="text-align: right;">
+                    <div class="form-group">
+                        <button type="submit" style="width: 120px; color: white; background-color: #00509D; border-radius: 6px; padding: 10px; font-size: 15px; font-weight: 500; border-color: #00509D;"><i class="fa fa-save"></i> Save</button>
+                      </div>
+                </div>
+            </div>         
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

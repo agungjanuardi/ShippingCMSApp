@@ -11,8 +11,14 @@ import { SidebarModule } from './layouts/sidebar/sidebar.module';
 import { AppComponent } from './app.component';
 
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { RightSidebarModule } from './layouts/right-sidebar/right-sidebar.module';
 import { MatTabsModule } from '@angular/material/tabs';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgxPaginationModule } from 'ngx-pagination';
+import { Ng2OrderModule } from 'ng2-order-pipe';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { SimpleModalModule } from 'ngx-simple-modal';
+import { DemoMaterialModule } from 'material-module';
+import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 @NgModule({
   imports: [
@@ -24,7 +30,12 @@ import { MatTabsModule } from '@angular/material/tabs';
     NavbarModule,
     SidebarModule,
     AppRoutingModule,
-    RightSidebarModule
+    BrowserModule,
+    NgxPaginationModule,
+    Ng2OrderModule,
+    Ng2SearchPipeModule,
+    DemoMaterialModule,
+    ButtonsModule.forRoot()
   ],
   declarations: [
     AppComponent,

@@ -1,0 +1,142 @@
+<div class="container-fluid">
+  <div class="row g-0">
+    <div class="col-md-8">
+      <div
+        class="container-fluid-list"
+        style="
+          background-color: white;
+          border-radius: 6px;
+          margin-top: 15px;
+          margin-bottom: 15px;
+          top: 0px;
+          position: sticky;
+          border: 1px solid rgba(0, 0, 0, 0.1);
+          padding: 30px;
+        "
+      >
+        <div class="row">
+          <div class="col-md-12">
+            <p style="font-size: 20px; font-weight: 600;">My Address</p>
+          </div>
+        </div>
+        <div class="row" style="padding-top: 20px;">
+            <div class="col-md-3" style="text-align: left;">
+                <div class="btn-group">
+                  <label class="btn btn-primary" [(ngModel)]="radioModel" btnRadio="Left" tabindex="0"  role="button">Left</label>
+                  <label class="btn btn-primary" [(ngModel)]="radioModel" btnRadio="Middle" tabindex="0" role="button">right</label>
+                </div>
+            </div>
+            <div class="col-md-5" style="text-align: center;">
+                <form class="d-flex">
+                    <div class="input-group">
+                      <input type="text" class="form-control" [(ngModel)]="addressSearch" (ngModelChange)="addressFilter()">
+                      <span class="input-group-addon"
+                        ><i
+                          class="glyphicon glyphicon-search"
+                          style="color: #00509D"
+                        ></i
+                      ></span>
+                    </div>
+                </form>
+            </div>
+            <div class="col-md-1" style="text-align: left; padding: 0px;">
+                <div class="filterIcon"><img src="./assets/img/filter-button-icon.png" alt="" style="width: 35px; height: 35
+                px;" (click)=showFilter()></div>
+              </div>
+            <div class="col-md-3" style="text-align: right;">
+                <button
+              style="
+                background-color: #CC0019;
+                font-size: 15px;
+                font-weight: 700;
+                color: white;
+                height: 40px;
+                border-radius: 6px;
+                border-color: transparent;
+                width: 100%;
+              "
+              (click)="addAddressSwitch(true)"
+            >
+              + Add New
+            </button>
+            </div>
+        </div>
+        <div class="row" style="padding-top: 20px;">
+        <div class="col-md-12">
+              <div *ngFor='let address of AddressList; let i = index; let even = even'>
+                <span *ngIf="even">
+                    <div class="col-md-6" style="padding-left: 5px; padding-right: 5px;">
+                        <div class="card" style="padding: 25px; margin: 10px;">
+                          <div class="card-body">
+                            <span>
+                                <div class="row">
+                                <div class="col-md-2" style="text-align: left;">
+                                <img src="./assets/img/america-thumbnail-icon.png" alt="" *ngIf="checkAmericaFlag(i)" style="width: 28px; height: 28px;">
+                                <img src="./assets/img/canada-thumbnail-icon.png" alt="" *ngIf="checkCanadaFlag(i)" style="width: 28px; height: 28px;">
+                                </div>
+                                <div class="col-md-6" style="text-align: left;">
+                                <p style="font-size: 15px; font-weight: 600; color: black;">{{AddressList[i].Country}}</p>
+                                </div>
+                                <div class="col-md-4" *ngIf="checkIsPrimary(i)">
+                                    <a href="#" class="btn btn-danger" style="font-size: 11px; font-weight: 500; height: 32px;">Primary</a>
+                                </div>
+                                </div>
+                            </span>
+                            <h5 class="card-title" style="font-size: 13px; font-weight: 500; color: var(--text-dark, #121212);">{{AddressList[i].AddressName}}</h5>
+                            <p class="card-text" style="font-size: 11px; font-weight: 600; color: var(--text-soft, #5A5A5A);">{{AddressList[i].StreetName}}, {{AddressList[i].City}}</p>
+                            <p class="card-text" style="font-size: 13px; font-weight: 400; color: var(--text-soft, #5A5A5A);">{{AddressList[i].State}}, {{AddressList[i].PostalCode}}</p>
+                            <p class="card-text" style="font-size: 13px; font-weight: 400; color: var(--text-soft, #5A5A5A);">{{AddressList[i].PhoneNumber}}</p>
+                            <p class="card-text" style="font-size: 11px; font-weight: 400; color: var(--text-soft, #5A5A5A);">{{AddressList[i].EmailAddress}}</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6" style="padding-left: 5px; padding-right: 5px;" *ngIf="!((i+1)==AddressList.length)">
+                        <div class="card" style="padding: 25px; margin: 10px;">
+                            <div class="card-body">
+                                <span>
+                                    <div class="row">
+                                    <div class="col-md-2" style="text-align: left;">
+                                    <img src="./assets/img/america-thumbnail-icon.png" alt="" *ngIf="checkAmericaFlag(i+1)" style="width: 28px; height: 28px;">
+                                    <img src="./assets/img/canada-thumbnail-icon.png" alt="" *ngIf="checkCanadaFlag(i+1)" style="width: 28px; height: 28px;">
+                                    </div>
+                                    <div class="col-md-6" style="text-align: left;">
+                                    <p style="font-size: 15px; font-weight: 600; color: black;">{{AddressList[i].Country}}</p>
+                                    </div>
+                                    <div class="col-md-4" *ngIf="checkIsPrimary(i+1)">
+                                        <a href="#" class="btn btn-danger" style="font-size: 11px; font-weight: 500; height: 32px;">Primary</a>
+                                    </div>
+                                    </div>
+                                </span>
+                                <h5 class="card-title" style="font-size: 13px; font-weight: 500; color: var(--text-dark, #121212);">{{AddressList[i+1].AddressName}}</h5>
+                                <p class="card-text" style="font-size: 11px; font-weight: 600; color: var(--text-soft, #5A5A5A);">{{AddressList[i+1].StreetName}}, {{AddressList[i+1].City}}</p>
+                                <p class="card-text" style="font-size: 13px; font-weight: 400; color: var(--text-soft, #5A5A5A);">{{AddressList[i+1].State}}, {{AddressList[i+1].PostalCode}}</p>
+                                <p class="card-text" style="font-size: 13px; font-weight: 400; color: var(--text-soft, #5A5A5A);">{{AddressList[i+1].PhoneNumber}}</p>
+                                <p class="card-text" style="font-size: 11px; font-weight: 400; color: var(--text-soft, #5A5A5A);">{{AddressList[i+1].EmailAddress}}</p>
+                              </div>
+                        </div>
+                      </div>
+                 </span>
+              </div>
+        </div>
+    </div>
+      </div>
+    </div>
+    <div
+      class="col-md-4"
+      style="
+        background-color: white;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        padding: 30px;
+        border-radius: 6px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        height: 100vh;
+        position: sticky;
+        top: 0px;
+      "
+    >
+      <app-add-address *ngIf="isAddAddress" (newAddressEvent)="addAddress($event)" (addAddressEvent)="addAddressSwitch($event)"></app-add-address>
+      <app-profile-view *ngIf="!isAddAddress"></app-profile-view>
+    </div>
+  </div>
+</div>

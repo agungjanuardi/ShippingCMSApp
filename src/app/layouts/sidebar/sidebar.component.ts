@@ -16,11 +16,11 @@ export const ROUTES: RouteInfo[] = [
 ];
 
 export const ROUTESSETTINGS: RouteInfo[] = [
-  { path: '/address', title: 'Address Book',  icon: '../assets/img/address-icon.png', class: '' },
+  { path: '/address-book', title: 'Address Book',  icon: '../assets/img/address-icon.png', class: '' },
   { path: '/saved', title: 'Saved Box Sizes',  icon: '../assets/img/saved-box-icon.png', class: '' },
   { path: '/membership', title: 'Membership Plan',  icon: '../assets/img/membership-icon.png', class: '' },
   { path: '/account', title: 'Account Details',  icon: '../assets/img/account-icon.png', class: '' },
-  { path: '/billing', title: 'Billing History',  icon: '../assets/img/billing-icon.png', class: '' },
+  { path: '/billing-history', title: 'Billing History',  icon: '../assets/img/billing-icon.png', class: '' },
   { path: '/refer', title: 'Address Book',  icon: '../assets/img/refer-icon.png', class: '' },
   { path: '/support', title: 'Support',  icon: '../assets/img/support-icon.png', class: '' },
 ];

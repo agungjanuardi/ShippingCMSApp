@@ -1,0 +1,185 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8">
+      <div
+        class="container-fluid-list"
+        style="
+          background-color: white;
+          border-radius: 6px;
+          margin-top: 15px;
+          margin-bottom: 15px;
+          top: 0px;
+          position: sticky;
+          border: 1px solid rgba(0, 0, 0, 0.1);
+          padding: 30px;
+        "
+      >
+        <div class="row g-0">
+          <div class="col-md-7">
+            <ul class="nav nav-tabs" style="border: 0px; align-items: center">
+              <li class="active">
+                <div class="tab-block" style="display: inline-block">
+                  <a
+                    data-toggle="tab"
+                    href="#all"
+                    style="color: black; font-size: 16px; font-weight: 600"
+                    >All</a
+                  >
+                </div>
+                <div
+                  class="notification"
+                  style="
+                    height: 30px;
+                    width: 30px;
+                    background-color: #cc0019;
+                    display: inline-block;
+                    text-align: center;
+                    border-radius: 4px;
+                    margin-left: 20px;
+                    margin-right: 20px;
+                  "
+                >
+                  <p
+                    style="
+                      color: white;
+                      font-size: 12px;
+                      font-weight: 600;
+                      padding: 5px;
+                    "
+                  >
+                    0
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="tab-block" style="display: inline-block">
+                  <a
+                    data-toggle="tab"
+                    href="#incoming"
+                    style="color: black; font-size: 16px; font-weight: 600"
+                    >Incoming</a
+                  >
+                </div>
+                <div
+                  class="notification"
+                  style="
+                    height: 30px;
+                    width: 30px;
+                    background-color: #cc0019;
+                    display: inline-block;
+                    text-align: center;
+                    border-radius: 4px;
+                    margin-left: 20px;
+                    margin-right: 20px;
+                  "
+                >
+                  <p
+                    style="
+                      color: white;
+                      font-size: 12px;
+                      font-weight: 600;
+                      padding: 5px;
+                    "
+                  >
+                    0
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="tab-block" style="display: inline-block">
+                  <a
+                    data-toggle="tab"
+                    href="#outgoing"
+                    style="color: black; font-size: 16px; font-weight: 600"
+                    >Outgoing</a
+                  >
+                </div>
+                <div
+                  class="notification"
+                  style="
+                    height: 30px;
+                    width: 30px;
+                    background-color: #cc0019;
+                    display: inline-block;
+                    text-align: center;
+                    border-radius: 4px;
+                    margin-left: 20px;
+                    margin-right: 20px;
+                  "
+                >
+                  <p
+                    style="
+                      color: white;
+                      font-size: 12px;
+                      font-weight: 600;
+                      padding: 5px;
+                    "
+                  >
+                    0
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <form class="d-flex">
+              <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search" />
+                <span class="input-group-addon"
+                  ><i
+                    class="glyphicon glyphicon-search"
+                    style="color: #d90429"
+                  ></i
+                ></span>
+              </div>
+            </form>
+          </div>
+          <div class="col-md-2">
+            <button
+              style="
+                background-color: #00509d;
+                font-size: 12px;
+                font-weight: 500;
+                color: white;
+                height: 40px;
+                border-radius: 6px;
+                border-color: transparent;
+                width: 100%;
+              "
+            >
+              Consolidate
+            </button>
+          </div>
+        </div>
+
+        <div class="tab-content" style="padding-top: 20px">
+          <div id="all" class="tab-pane fade in active">
+            <app-shipping-lists></app-shipping-lists>
+          </div>
+          <div id="incoming" class="tab-pane fade">
+            <app-shipping-lists></app-shipping-lists>
+          </div>
+          <div id="outgoing" class="tab-pane fade">
+            <app-shipping-lists></app-shipping-lists>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="col-md-4"
+      style="
+        background-color: white;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        padding: 30px;
+        border-radius: 6px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        height: calc(100vh-15px);
+        position: sticky;
+        top: 0px;
+      "
+    >
+      <app-address-confirmation></app-address-confirmation>
+    </div>
+  </div>
+</div>

@@ -5,11 +5,11 @@ import { ChartType, LegendItem } from 'app/lbd/lbd-chart/lbd-chart.component';
 import {MatTabsModule} from '@angular/material/tabs';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-dashboard',
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.css']
 })
-export class HomeComponent implements OnInit {
+export class DashboardComponent implements OnInit {
 
   constructor() { }
 

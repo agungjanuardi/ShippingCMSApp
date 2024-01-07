@@ -1,0 +1,144 @@
+<div class="container-fluid">
+  <div class="row g-0">
+    <div class="col-md-8">
+      <div
+        class="container-fluid-list"
+        style="
+          background-color: white;
+          border-radius: 6px;
+          margin-top: 15px;
+          margin-bottom: 15px;
+          top: 0px;
+          position: sticky;
+          border: 1px solid rgba(0, 0, 0, 0.1);
+          padding: 30px;
+        "
+      >
+      <div class="row">
+      <div class="col-md-12">
+        <p style="font-size: 20px; font-weight: 600;">Billing History</p>
+      </div>
+      <div class="col-md-12">
+        <p style="font-size: 15px; font-weight: 400;">Manage Your Billing Information</p>
+      </div>
+      </div>
+      <div class="table-section" *ngIf="isDataReady">
+      <div class="row">
+        <div class="col-md-6"></div>
+        <div class="col-md-5">
+          <form class="d-flex">
+            <div class="input-group">
+              <input type="text" class="form-control" [(ngModel)]="invoiceSearch" (ngModelChange)="invoiceFilter()">
+              <span class="input-group-addon"
+                ><i
+                  class="glyphicon glyphicon-search"
+                  style="color: #00509D"
+                ></i
+              ></span>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-1" style="text-align: left; padding: 0px;">
+          <div class="filterIcon"><img src="./assets/img/filter-button-icon.png" alt="" style="width: 35px; height: 35px;" (click)=showFilter()></div>
+        </div>
+      </div>
+      <div class="row" style="padding-top: 20px;">
+        <div class="col-md-12">
+          <table class="table">
+          <thead style="text-align: left; background-color: #00509D;">
+            <tr>
+              <th scope="col" style="font-size: 15px; color: white; font-weight: 500; padding: 15px; text-transform: none;" (click)="sort('InvoiceNo')">Invoice No. &nbsp;<i class="fa fa-sort"></i></th>
+              <th scope="col" style="font-size: 15px; color: white; font-weight: 500; padding: 15px; text-transform: none;" (click)="sort('InvoiceDate')">Date &nbsp;<i class="fa fa-sort"></i></th>
+              <th scope="col" style="font-size: 15px; color: white; font-weight: 500; padding: 15px; text-transform: none;" (click)="sort('InvoiceName')">Name &nbsp;<i class="fa fa-sort"></i></th>
+              <th scope="col" style="font-size: 15px; color: white; font-weight: 500; padding: 15px; text-transform: none;" (click)="sort('InvoiceTotal')">Total &nbsp;<i class="fa fa-sort"></i></th>
+              <th scope="col" style="font-size: 15px; color: white; font-weight: 500; padding: 15px; text-transform: none;">Invoice</th>
+            </tr>
+          </thead>
+          <tbody style="padding-top: 15px;">
+            <tr *ngFor="let group of BillingHistoryList | paginate: { itemsPerPage: pageSize, currentPage: page } | orderBy: key: reverse">
+              <td>{{group.InvoiceNo}}</td>
+              <td>{{group.InvoiceDate}}</td>
+              <td>{{group.InvoiceName}}</td>
+              <td>{{group.InvoiceTotal}}</td>
+              <td>{{group.InvoiceLink}}</td>
+            </tr>
+          </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-2" style="text-align: left;">
+          <p style="font-size: 15px; font-weight: 400;     padding: 5px;
+          margin: 5px;">Showing</p>
+        </div>
+        <div class="col-md-1" style="text-align: left; display: flex;">
+          <select name="pageSizeChoosen" [(ngModel)]="pageSize" (change)="onChangeSize()" style="padding: 5px;
+          margin: 5px;
+          height: 32px;
+          width: 100px;
+          border-radius: 6px;">
+            <option value="6" selected>6</option>
+            <option value="10">10</option>
+            <option value="15">15</option>
+            <option value="20">20</option>
+          </select>
+        </div>
+        <div class="col-md-1" style="text-align: left;">
+          <p style="font-size: 15px; font-weight: 400;     padding: 5px;
+          margin: 5px;">entries</p>
+        </div>
+        <div class="col-md-8" style="text-align: right;">
+          <pagination-controls (pageChange)="page = $event" previousLabel="&lsaquo;" nextLabel="&rsaquo;"></pagination-controls>
+        </div>
+      </div>
+      </div>
+      <div class="empty-section" *ngIf="!isDataReady" style="text-align: center;">
+        <div class="row">
+          <div class="col-md-12"
+          style=" 
+        height: 100vh;
+        "
+          >
+            <div class="content-empyt" style="margin: 30vh;">
+            <img src="./assets/img/shiplink-logo.png" alt="" width="120px" >
+            <p style="font-size: 15px; font-weight: 700; color: #5A5A5A; margin-top: 40px;">You Dont Have Any Data To Display Here</p>
+            <p style="font-size: 15px; font-weight: 500; color: #5A5A5A;">Start Shipping Today </p>
+            <button
+              style="
+                background-color: #cc0019;
+                padding: 5px 32px;
+                font-size: 15px;
+                font-weight: 600;
+                color: white;
+                border-radius: 6px;
+                border-color: transparent;
+                box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.10), 0px 1px 3px 0px rgba(0, 0, 0, 0.10), 1px 5px 5px 0px rgba(0, 0, 0, 0.09), 3px 11px 7px 0px rgba(0, 0, 0, 0.05), 5px 19px 8px 0px rgba(0, 0, 0, 0.01), 8px 30px 9px 0px rgba(0, 0, 0, 0.00);
+              "
+            (click)="btnDashboard()"
+            >
+            Send Package
+            </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+    <div
+      class="col-md-4"
+      style="
+        background-color: white;
+        margin-top: 15px;
+        margin-bottom: 15px;
+        padding: 30px;
+        border-radius: 6px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        height: 100vh;
+        position: sticky;
+        top: 0px;
+      "
+    >
+      <app-credit-information></app-credit-information>
+    </div>
+  </div>
+</div>
