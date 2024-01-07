@@ -20,13 +20,11 @@
           </div>
         </div>
         <div class="row" style="padding-top: 20px;">
-            <div class="col-md-3" style="text-align: left;">
-                <div class="btn-group">
-                  <label class="btn btn-primary" [(ngModel)]="radioModel" btnRadio="Left" tabindex="0"  role="button">Left</label>
-                  <label class="btn btn-primary" [(ngModel)]="radioModel" btnRadio="Middle" tabindex="0" role="button">right</label>
-                </div>
+            <div class="col-md-2" style="border: #E1E1E1 solid 1px; border-radius: 4px; padding: 5px; text-align: center;">
+              <label class="btn btn-primary" [(ngModel)]="radioModel" btnRadio="Left" tabindex="0"  role="button" style="background-color: #CC0019; border: 0px;"><img src="./assets/img/white-grid-white-icon.png" alt="" style="width: 20px; height: 20px;"></label>
+              <label class="btn btn-primary" [(ngModel)]="radioModel" btnRadio="Middle" tabindex="0" role="button" style="background-color: white; border: 0px;"><img src="./assets/img/view-list-black-icon.png" alt="" style="width: 20px; height: 20px;"></label>
             </div>
-            <div class="col-md-5" style="text-align: center;">
+            <div class="col-md-6" style="text-align: right;">
                 <form class="d-flex">
                     <div class="input-group">
                       <input type="text" class="form-control" [(ngModel)]="addressSearch" (ngModelChange)="addressFilter()">
@@ -39,7 +37,7 @@
                     </div>
                 </form>
             </div>
-            <div class="col-md-1" style="text-align: left; padding: 0px;">
+            <div class="col-md-1" style="text-align: center; padding: 0px;">
                 <div class="filterIcon"><img src="./assets/img/filter-button-icon.png" alt="" style="width: 35px; height: 35
                 px;" (click)=showFilter()></div>
               </div>

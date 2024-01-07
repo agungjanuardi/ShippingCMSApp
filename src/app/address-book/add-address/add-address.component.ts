@@ -25,7 +25,7 @@ export class AddAddressComponent implements OnInit {
     this.AddressForm = this.fb.group({
       UserId: [null],
       AddressName: ['', [Validators.required]],
-      StreetName: ['', [Validators.required, Validators.email]],
+      StreetName: ['', [Validators.required]],
       City: ['', [Validators.required]],
       PostalCode: ['', [Validators.required]],
       State: ['', [Validators.required]],
@@ -40,13 +40,6 @@ export class AddAddressComponent implements OnInit {
     return this.AddressForm.controls;
   }
 
-  changeCountry(e) {
-    console.log(e.value)
-    this.AddressForm.controls["Country"].setValue(e.target.value, {
-      onlySelf: true
-    })
-  }
-
   cancelAddAddressForm()
   {
     this.submitted = false;
@@ -57,12 +50,10 @@ export class AddAddressComponent implements OnInit {
   updateValueAddressForm()
   {
     this.submitted = true;
-
+    console.log(this.AddressForm)
     if (this.AddressForm.invalid) {
       return;
     }
-
-    console.log(JSON.stringify(this.AddressForm.value, null, 2));
     this.newAddressEvent.emit(this.AddressForm.value);
     this.addAddressEvent.emit(false);
     this.AddressForm.reset();

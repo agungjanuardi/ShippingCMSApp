@@ -63,6 +63,7 @@ export class AddressBookComponent implements OnInit {
 
   addAddress(newAddres: Address)
   {
+    console.log(newAddres)
     this.ngOnInit();
     this.AddressList.push(newAddres);
   }
